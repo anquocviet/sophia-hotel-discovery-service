@@ -1,0 +1,20 @@
+name: sophia_hotel-discovery-service
+
+services:
+  discovery-service:
+    container_name: discovery-service
+    build:
+      context: ../
+      target: runtime
+    ports:
+      - "8761:8761"
+    networks:
+      - sophia_hotel
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:8761/ || exit 1"]
+      interval: 30s
+      retries: 10
+
+networks:
+  sophia_hotel:
+    driver: bridge
