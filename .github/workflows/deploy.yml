@@ -36,5 +36,4 @@ jobs:
           NGROK_AUTHTOKEN: ${{ secrets.NGROK_TOKEN }}
         run: |
           ngrok config add-authtoken $NGROK_AUTHTOKEN
-          nohup ngrok http 8080 > ngrok.log 2>&1 &
-
+          nohup ngrok http 8761 > ngrok.log 2>&1 &
