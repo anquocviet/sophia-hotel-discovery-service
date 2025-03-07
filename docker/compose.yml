@@ -1,4 +1,4 @@
-name: sophia_hotel-discovery-service
+name: sophia_hotel
 
 services:
   discovery-service:
